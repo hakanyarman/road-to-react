@@ -11,6 +11,7 @@ export const Counter = () => {
       leftCount: counts.leftCount + 1,
     });
     setAllClicks(allClicks.concat("left"));
+    // allClicks.concat("left") aslında yeni bir array. yani setAllClicks(newAllClicks) gibi bir şey yaptık aslında.
   };
 
   const handleRightClick = () => {
