@@ -14,13 +14,23 @@ export const Counter = () => {
     // allClicks.concat("left") aslında yeni bir array. yani setAllClicks(newAllClicks) gibi bir şey yaptık aslında.
   };
 
-  const handleRightClick = () => {
+//   const handleRightClick = () => {
+//     setCounts({
+//       ...counts,
+//       rightCount: counts.rightCount + 1,
+//     });
+//     setAllClicks(allClicks.concat("right"))
+//   };
+
+// diğer yöntemimiz bu setAllClicks için. doğrudan state'in kendini değiştirmemeliyiz.
+const handleRightClick = () => {
     setCounts({
       ...counts,
       rightCount: counts.rightCount + 1,
     });
-    setAllClicks(allClicks.concat("right"))
+    setAllClicks(...allClicks.push("right"))
   };
+
 
   return (
     <div>
