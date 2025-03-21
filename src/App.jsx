@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Search from "./components/Search";
+import { Counter } from "./components/Counter";
 
 function App() {
   const words = [
@@ -22,6 +23,8 @@ function App() {
     setSearchTerm(e.target.value);
   };
 
+  const now = new Date().getTime();
+
   return (
     <div>
       <Search onChange={handleChange}></Search>
@@ -35,6 +38,8 @@ function App() {
           );
         })}
       </ul>
+      {now.toString()}
+      <Counter />
     </div>
   );
 }
