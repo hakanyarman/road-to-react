@@ -40,8 +40,8 @@ export const Counter = () => {
     <div>
       {/* <button onClick={handleLeftClick}>left {counts.leftCount}</button>
       <button onClick={handleRightClick}>right {counts.rightCount}</button> */}
-      <Button buttonText={"left"} onClick={handleLeftClick}>{counts.leftCount}</Button>
-      <Button buttonText={"right"} onClick={handleRightClick}>{counts.rightCount}</Button>
+      <Button buttonText={"left " +counts.leftCount.toString() } onClick={handleLeftClick}/>
+      <Button buttonText={"right " + counts.rightCount.toString()} onClick={handleRightClick} />
       <div>
         {allClicks.length ? (
           <p>total click: {totalClicks}</p>
