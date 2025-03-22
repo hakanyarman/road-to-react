@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "./Button";
 
 export const Counter = () => {
   const [counts, setCounts] = useState({ leftCount: 0, rightCount: 0 });
@@ -37,8 +38,10 @@ export const Counter = () => {
 
   return (
     <div>
-      <button onClick={handleLeftClick}>left {counts.leftCount}</button>
-      <button onClick={handleRightClick}>right {counts.rightCount}</button>
+      {/* <button onClick={handleLeftClick}>left {counts.leftCount}</button>
+      <button onClick={handleRightClick}>right {counts.rightCount}</button> */}
+      <Button buttonText={"left"} onClick={handleLeftClick}>{counts.leftCount}</Button>
+      <Button buttonText={"right"} onClick={handleRightClick}>{counts.rightCount}</Button>
       <div>
         {allClicks.length ? (
           <p>total click: {totalClicks}</p>
