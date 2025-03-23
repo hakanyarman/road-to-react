@@ -57,6 +57,7 @@ function App() {
       important: Math.random() < 0.5,
       id: String(notes.length + 1)
     }
+    axios.post("http://localhost:3000/notes",noteObject)
     setNotes(notes.concat(noteObject));
     setJustImportantNotes(notes.filter((note)=>{
       return note.important == true;
