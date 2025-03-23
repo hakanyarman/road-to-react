@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import { Counter } from "./components/Counter";
 import Note from "./components/Note";
+import axios from "axios";
+
 
 function App() {
   const words = [
@@ -19,6 +21,13 @@ function App() {
   const [notes, setNotes] = useState([]);
   const [isJustImportantTrue,setIsJustImportantTrue ] = useState(false);
   const [justImportantNotes, setJustImportantNotes] = useState([]);
+
+  useEffect(()=>{
+    axios.get("http://localhost:3000/notes").then((response)=>{
+      //console.log(response.data);
+      setNotes(response.data);
+    })
+  },[])
   
 
   const showJustImportanNotes = () => {
@@ -53,7 +62,6 @@ function App() {
       return note.important == true;
     }))
     setNewNote("");
-
   }
 
   const now = new Date().getTime();
