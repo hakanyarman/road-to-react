@@ -78,7 +78,7 @@ function App() {
       <input type="text" value={newNote} onChange={handleNoteChange}/>
       <button type="submit">add</button>
       </form>
-      <button onClick={showJustImportanNotes}>{isJustImportantTrue ? "show all" : "show just importants"}</button>
+      <button onClick={showJustImportanNotes}>show {isJustImportantTrue ? "all" : "just importants"}</button>
       {!isJustImportantTrue ? notes.map((note) => {
         return <Note note={note} key={note.id}/>;
       }): justImportantNotes.map((note) => {
