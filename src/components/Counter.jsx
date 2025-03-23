@@ -35,7 +35,7 @@ export const Counter = () => {
     setAllClicks(allClicks.concat("right"));
     setTotalClicks(totalClicks + 1);
   };
-
+  
   return (
     <div>
       {/* <button onClick={handleLeftClick}>left {counts.leftCount}</button>
