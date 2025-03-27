@@ -4,6 +4,8 @@ import Search from "./components/Search";
 import { Counter } from "./components/Counter";
 import Note from "./components/Note";
 import axios from "axios";
+import Parent from "./components/Parent";
+import Child from "./components/Child";
 
 
 function App() {
@@ -94,7 +96,9 @@ function App() {
         return <Note note={note} key={note.id}/>;
       }) }
       {}
-      
+      <Parent>
+        <Child>children text of Child component</Child>
+      </Parent>
     </div>
   );
 }
